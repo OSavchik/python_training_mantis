@@ -6,7 +6,6 @@ def test_delete_random_contact(app):
         app.project.create_project(Project(name="ProjectName"))
     old_projects = app.project.get_project_list()
     project = random.choice(old_projects)
-    project_name = project.name
     app.project.delete_contact_by_name(project.name)
     new_projects = app.project.get_project_list()
     assert len(old_projects) - 1 == len(new_projects)

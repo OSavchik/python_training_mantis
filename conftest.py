@@ -31,7 +31,7 @@ def app(request, config):
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, config=config)
         # fixture = Application(browser=browser, base_url=config['web']['baseUrl'])
-   # fixture.session.ensure_authorization(config['web']['username'], config['web']['password'])
+    fixture.session.ensure_authorization(config['web']['username'], config['web']['password'])
     return fixture
 
 @pytest.fixture(scope="session", autouse=True)

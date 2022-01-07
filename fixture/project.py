@@ -55,6 +55,7 @@ class ProjectHelper:
 
     def delete_contact_by_name(self, name):
         wd = self.app.wd
+        self.open_project_list()
         wd.find_element_by_link_text(name).click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
